@@ -96,6 +96,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://calculadoras-utiles.pages.dev/#tdee</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calculadoras-utiles.pages.dev/#regla3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calculadoras-utiles.pages.dev/#imcinverso</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://calculadoras-utiles.pages.dev/#sobre</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
