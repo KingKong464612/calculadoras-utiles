@@ -1,1 +1,1 @@
-$(curl -s https://raw.githubusercontent.com/KingKong464612/calculadoras-utiles/main/app.js | sed 's/card.style.display = match ? '\'''\'' : '\''none'\'';/card.style.display = match ? '\''block'\'' : '\''none'\'';/')
+$(python3 -c 'print(open("/tmp/fixed_app.js").read())')
