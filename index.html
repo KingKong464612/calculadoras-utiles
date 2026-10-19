@@ -87,7 +87,16 @@
     <section id="historial" class="section"><div class="calc-card"><h2>Historial</h2><div id="historyList"></div><button id="clearHistory" class="btn btn-danger">Borrar historial</button></div></section>
     <section id="sobre" class="section"><div class="calc-card"><h2>Sobre</h2><p>Calculadoras gratuitas y privadas. Todo se calcula en tu navegador.</p></div></section>
     <section id="privacidad" class="section"><div class="calc-card"><h2>Privacidad</h2><p>No guardamos datos personales. Los cálculos se hacen localmente.</p></div></section>
-    <section id="sugerencias" class="section"><div class="calc-card"><h2>Sugerencias</h2><form name="sugerencias" method="POST"><input type="hidden" name="form-name" value="sugerencias"><input type="text" name="nombre" placeholder="Nombre (opcional)"><input type="email" name="email" placeholder="Email (opcional)"><textarea name="sugerencia" required rows="4" placeholder="Tu sugerencia"></textarea><button type="submit" class="btn">Enviar</button></form><div id="sugerenciaOk" class="result" style="display:none;">¡Gracias!</div></div></section>
+    <section id="sugerencias" class="section">
+      <div class="calc-card">
+        <h2>Deja tu sugerencia</h2>
+        <p class="desc">¿Qué calculadora te gustaría ver? ¿Alguna mejora o idea? Escríbela aquí.</p>
+        <iframe src="https://docs.google.com/forms/d/1gqfYUW4a1lKZPcuiOPCVQrWfMYJHah1XP6DNJjvi258/viewform?embedded=true" width="100%" height="820" frameborder="0" marginheight="0" marginwidth="0" style="border:0; border-radius:12px; background:transparent;">Cargando formulario…</iframe>
+        <p style="margin-top:1rem; text-align:center; font-size:0.9rem; color:var(--text-muted);">
+          Si no se carga, <a href="https://docs.google.com/forms/d/1gqfYUW4a1lKZPcuiOPCVQrWfMYJHah1XP6DNJjvi258/viewform" target="_blank" style="color:var(--accent);">abre el formulario aquí</a>.
+        </p>
+      </div>
+    </section>
   </main>
   <footer>Calculadoras Útiles · 100% gratis y privado</footer>
   <script src="app.js"></script>
