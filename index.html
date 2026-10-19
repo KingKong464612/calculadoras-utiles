@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadoras Útiles Gratis Online | IMC, IVA, Préstamos y Más</title>
+  <meta name="description" content="Calculadoras gratuitas y privadas en español: IMC, porcentaje, edad, préstamos, IVA España, interés compuesto, días entre fechas, propina, conversor de unidades y más. Rápidas, sin registro y 100% en tu navegador.">
+  <meta name="keywords" content="calculadora IMC, calculadora IVA, calculadora préstamo, calculadora porcentaje, calculadora edad, interés compuesto, días entre fechas, propina, conversor unidades, nómina, días laborables">
+  <link rel="canonical" href="https://calculadoras-utiles.netlify.app/">
+  <meta property="og:title" content="Calculadoras Útiles Gratis Online">
+  <meta property="og:description" content="Herramientas gratuitas de cálculo: IMC, IVA, préstamos, porcentajes y más. Privadas y rápidas.">
+  <meta property="og:url" content="https://calculadoras-utiles.netlify.app/">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadoras Útiles",
+    "url": "https://calculadoras-utiles.netlify.app/",
+    "description": "Colección de calculadoras gratuitas y privadas para uso diario en español.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3041644855344581"
+     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <button class="theme-toggle" id="themeBtn" title="Cambiar tema">🌙</button>
+    <h1>Calculadoras Útiles</h1>
+    <p>Herramientas interactivas, rápidas y 100% privadas</p>
+  </header>
+
+  <nav>
+    <button class="active" data-section="inicio">Inicio</button>
+    <button data-section="historial">Historial</button>
+    <button data-section="sugerencias">Sugerencias</button>
+    <button data-section="sobre">Sobre</button>
+    <button data-section="privacidad">Privacidad</button>
+  </nav>
+
+  <main>
+    <!-- Inicio -->
+    <section id="inicio" class="section active">
+      <h2 style="margin-bottom:1rem;">Elige una herramienta</h2>
+      <div class="search-box">
+        <input type="text" id="searchTools" placeholder="Buscar calculadora... (ej: IMC, propina, IVA)" autocomplete="off">
+      </div>
+      <div class="grid" id="toolsGrid">
+        <div class="tool-card" data-go="imc" data-keywords="imc indice masa corporal peso altura"><h3>Calculadora de IMC</h3><p>Peso y altura → índice y categoría OMS</p></div>
+        <div class="tool-card" data-go="porcentaje" data-keywords="porcentaje descuento aumento proporcion"><h3>Porcentaje</h3><p>Descuentos, aumentos y proporciones</p></div>
+        <div class="tool-card" data-go="edad" data-keywords="edad años meses días nacimiento"><h3>Edad exacta</h3><p>Años, meses y días precisos</p></div>
+        <div class="tool-card" data-go="prestamo" data-keywords="préstamo hipoteca cuota interés"><h3>Préstamo / Hipoteca</h3><p>Cuota mensual e intereses</p></div>
+        <div class="tool-card" data-go="iva" data-keywords="iva 21 10 4 impuesto"><h3>IVA España</h3><p>21%, 10% y 4% — añadir o quitar</p></div>
+        <div class="tool-card" data-go="interes" data-keywords="interés compuesto inversión"><h3>Interés compuesto</h3><p>Valor futuro de una inversión</p></div>
+        <div class="tool-card" data-go="fechas" data-keywords="días fechas entre diferencia"><h3>Días entre fechas</h3><p>Calcula días exactos entre dos fechas</p></div>
+        <div class="tool-card" data-go="propina" data-keywords="propina cuenta personas"><h3>Propina</h3><p>Calcula propina y divide la cuenta</p></div>
+        <div class="tool-card" data-go="unidades" data-keywords="conversor unidades kg litros metros"><h3>Conversor de unidades</h3><p>kg, litros, metros y más</p></div>
+        <div class="tool-card" data-go="nomina" data-keywords="nómina salario neto bruto"><h3>Nómina aproximada</h3><p>Estimación de salario neto</p></div>
+        <div class="tool-card" data-go="laborables" data-keywords="días laborables hábiles trabajo"><h3>Días laborables</h3><p>Días hábiles entre fechas</p></div>
+        <div class="tool-card" data-go="temperatura" data-keywords="temperatura celsius fahrenheit conversor"><h3>Conversor de temperatura</h3><p>Celsius ↔ Fahrenheit</p></div>
+        <div class="tool-card" data-go="countdown" data-keywords="días hasta fecha countdown cuenta atrás"><h3>Días hasta una fecha</h3><p>Cuenta atrás hasta un día concreto</p></div>
+        <div class="tool-card" data-go="precio" data-keywords="precio por kilo unidad oferta"><h3>Precio por unidad</h3><p>Compara precios por kg o unidad</p></div>
+        <div class="tool-card" data-go="horas" data-keywords="horas trabajadas diferencia tiempo"><h3>Diferencia de horas</h3><p>Calcula horas y minutos entre dos momentos</p></div>
+        <div class="tool-card" data-go="combustible" data-keywords="consumo combustible litros 100km"><h3>Consumo de combustible</h3><p>Litros por 100 km</p></div>
+        <div class="tool-card" data-go="pesoideal" data-keywords="peso ideal IMC rango saludable"><h3>Peso ideal</h3><p>Rango de peso saludable según altura</p></div>
+        <div class="tool-card" data-go="interesimple" data-keywords="interés simple préstamo"><h3>Interés simple</h3><p>Interés sin capitalización</p></div>
+      </div>
+      <div id="noResults" class="no-results">No se encontraron calculadoras</div>
+    </section>
+
+    <!-- IMC -->
+    <section id="imc" class="section">
+      <div class="calc-card">
+        <h2>Calculadora de IMC</h2>
+        <p class="desc">Introduce peso y altura para obtener tu Índice de Masa Corporal.</p>
+        <form id="imcForm">
+          <div class="form-group"><label>Peso (kg)</label><input type="number" id="peso" step="0.1" required placeholder="70"></div>
+          <div class="form-group"><label>Altura (cm)</label><input type="number" id="altura" required placeholder="170"></div>
+          <button type="submit" class="btn">Calcular IMC</button>
+        </form>
+        <div id="imcResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>El Índice de Masa Corporal (IMC) se obtiene dividiendo el peso en kilogramos entre la altura en metros al cuadrado. Es una medida orientativa usada por la OMS para clasificar el peso: bajo peso (menos de 18.5), peso normal (18.5-24.9), sobrepeso (25-29.9) y obesidad (30 o más). No tiene en cuenta la masa muscular ni la composición corporal, por lo que es solo una referencia.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Porcentaje -->
+    <section id="porcentaje" class="section">
+      <div class="calc-card">
+        <h2>Calculadora de Porcentaje</h2>
+        <form id="porcForm">
+          <div class="form-group">
+            <label>Tipo</label>
+            <select id="tipo">
+              <option value="de">¿Qué es el X% de Y?</option>
+              <option value="aumento">Aumento del X% a Y</option>
+              <option value="descuento">Descuento del X% a Y</option>
+              <option value="es">Y es qué % de X?</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Valor 1 (X o %)</label><input type="number" id="v1" step="0.01" required></div>
+          <div class="form-group"><label>Valor 2 (Y o base)</label><input type="number" id="v2" step="0.01" required></div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="porcResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Esta calculadora permite obtener porcentajes de forma rápida. Puedes calcular qué es un porcentaje de una cantidad, aplicar un aumento o descuento, o saber qué porcentaje representa un valor respecto a otro. Es útil para ofertas, descuentos, notas, IVA o cualquier cálculo proporcional.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Edad -->
+    <section id="edad" class="section">
+      <div class="calc-card">
+        <h2>Calculadora de Edad</h2>
+        <form id="edadForm">
+          <div class="form-group"><label>Fecha de nacimiento</label><input type="date" id="fecha" required></div>
+          <button type="submit" class="btn">Calcular edad</button>
+        </form>
+        <div id="edadResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Calcula la edad exacta restando la fecha de nacimiento a la fecha actual. Ajusta correctamente los meses y días según la cantidad de días de cada mes. El resultado se muestra en años, meses y días. Útil para trámites, cumpleaños o cualquier documento que requiera la edad precisa.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Préstamo -->
+    <section id="prestamo" class="section">
+      <div class="calc-card">
+        <h2>Calculadora de Préstamo</h2>
+        <p class="desc">Sistema francés (cuota constante).</p>
+        <form id="prestamoForm">
+          <div class="form-group"><label>Capital (€)</label><input type="number" id="capital" required placeholder="10000"></div>
+          <div class="form-group"><label>Tasa anual (%)</label><input type="number" id="tasa" step="0.01" required placeholder="5"></div>
+          <div class="form-group"><label>Plazo (años)</label><input type="number" id="plazo" required placeholder="5"></div>
+          <button type="submit" class="btn">Calcular cuota</button>
+        </form>
+        <div id="prestamoResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Usa la fórmula del sistema francés (cuota constante): \( C = P \cdot \frac{r(1+r)^n}{(1+r)^n - 1} \), donde r es la tasa mensual y n el número de meses.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- IVA -->
+    <section id="iva" class="section">
+      <div class="calc-card">
+        <h2>Calculadora de IVA</h2>
+        <form id="ivaForm">
+          <div class="form-group"><label>Importe</label><input type="number" id="importe" step="0.01" required></div>
+          <div class="form-group">
+            <label>Tipo de IVA</label>
+            <select id="tipoIva"><option value="21">21%</option><option value="10">10%</option><option value="4">4%</option></select>
+          </div>
+          <div class="form-group">
+            <label>Modo</label>
+            <select id="modo"><option value="mas">Añadir IVA</option><option value="menos">Quitar IVA</option></select>
+          </div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="ivaResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Tipos de IVA en España: 21% general, 10% reducido, 4% superreducido. Puedes añadir o quitar el IVA del importe según necesites.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Interés -->
+    <section id="interes" class="section">
+      <div class="calc-card">
+        <h2>Interés Compuesto</h2>
+        <p class="desc">Calcula el valor futuro de una inversión. Puedes añadir aportaciones periódicas.</p>
+        <form id="interesForm">
+          <div class="form-group"><label>Capital inicial (€)</label><input type="number" id="principal" step="100" required placeholder="1000"></div>
+          <div class="form-group"><label>Aportación periódica (€)</label><input type="number" id="aportacion" step="10" value="0" placeholder="0"></div>
+          <div class="form-group">
+            <label>Frecuencia de la aportación</label>
+            <select id="freqAport">
+              <option value="12">Mensual</option>
+              <option value="1">Anual</option>
+              <option value="4">Trimestral</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Tasa de interés anual (%)</label><input type="number" id="tasaInt" step="0.01" required placeholder="5"></div>
+          <div class="form-group"><label>Años</label><input type="number" id="anos" min="1" required placeholder="10"></div>
+          <div class="form-group">
+            <label>Capitalización del interés</label>
+            <select id="frecuencia">
+              <option value="12">Mensual</option>
+              <option value="1">Anual</option>
+              <option value="4">Trimestral</option>
+              <option value="365">Diaria</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="interesResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>El interés compuesto se calcula con la fórmula \( A = P (1 + r/n)^{nt} \) más el valor futuro de las aportaciones periódicas. La tasa efectiva anual (TEA) muestra el rendimiento real anual.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Fechas -->
+    <section id="fechas" class="section">
+      <div class="calc-card">
+        <h2>Días entre fechas</h2>
+        <p class="desc">Calcula el número exacto de días entre dos fechas.</p>
+        <form id="fechasForm">
+          <div class="form-group"><label>Fecha inicial</label><input type="date" id="fecha1" required></div>
+          <div class="form-group"><label>Fecha final</label><input type="date" id="fecha2" required></div>
+          <button type="submit" class="btn">Calcular días</button>
+        </form>
+        <div id="fechasResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Se calcula la diferencia en milisegundos entre las dos fechas y se convierte a días. Es útil para contar plazos, vacaciones o periodos entre eventos.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Propina -->
+    <section id="propina" class="section">
+      <div class="calc-card">
+        <h2>Calculadora de Propina</h2>
+        <p class="desc">Calcula la propina y divide la cuenta entre varias personas.</p>
+        <form id="propinaForm">
+          <div class="form-group"><label>Importe de la cuenta (€)</label><input type="number" id="cuenta" step="0.01" required placeholder="50"></div>
+          <div class="form-group"><label>% de propina</label><input type="number" id="porcPropina" step="1" value="10" required></div>
+          <div class="form-group"><label>Número de personas</label><input type="number" id="personas" min="1" value="1" required></div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="propinaResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>La propina se calcula como un porcentaje del importe total. Luego se suma a la cuenta y se divide entre el número de personas para saber cuánto paga cada uno.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Unidades -->
+    <section id="unidades" class="section">
+      <div class="calc-card">
+        <h2>Conversor de Unidades</h2>
+        <p class="desc">Convierte entre unidades comunes de peso, volumen y longitud.</p>
+        <form id="unidadesForm">
+          <div class="form-group">
+            <label>Tipo</label>
+            <select id="tipoUnidad">
+              <option value="peso">Peso (kg ↔ lb)</option>
+              <option value="volumen">Volumen (L ↔ gal)</option>
+              <option value="longitud">Longitud (m ↔ ft)</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Valor</label><input type="number" id="valorUnidad" step="0.01" required placeholder="1"></div>
+          <div class="form-group">
+            <label>De</label>
+            <select id="desde">
+              <option value="kg">kg</option>
+              <option value="lb">lb</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>A</label>
+            <select id="hacia">
+              <option value="lb">lb</option>
+              <option value="kg">kg</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Convertir</button>
+        </form>
+        <div id="unidadesResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Usa factores de conversión estándar: 1 kg = 2,20462 lb, 1 L = 0,264172 gal, 1 m = 3,28084 ft. Ideal para recetas, viajes o compras internacionales.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Nómina -->
+    <section id="nomina" class="section">
+      <div class="calc-card">
+        <h2>Nómina Aproximada</h2>
+        <p class="desc">Estimación simple del salario neto a partir del bruto (España, aproximado).</p>
+        <form id="nominaForm">
+          <div class="form-group"><label>Salario bruto anual (€)</label><input type="number" id="bruto" required placeholder="30000"></div>
+          <div class="form-group"><label>Nº de pagas</label><input type="number" id="pagas" value="14" min="12" required></div>
+          <button type="submit" class="btn">Calcular neto</button>
+        </form>
+        <div id="nominaResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Estimación orientativa usando retenciones aproximadas de IRPF (~15-20%) y cotizaciones a la Seguridad Social (~6,35%). No sustituye un cálculo oficial. Consulta siempre con un profesional o la Seguridad Social.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Laborables -->
+    <section id="laborables" class="section">
+      <div class="calc-card">
+        <h2>Días Laborables</h2>
+        <p class="desc">Calcula los días hábiles (lunes a viernes) entre dos fechas, excluyendo fines de semana.</p>
+        <form id="laborablesForm">
+          <div class="form-group"><label>Fecha inicial</label><input type="date" id="lab1" required></div>
+          <div class="form-group"><label>Fecha final</label><input type="date" id="lab2" required></div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="laborablesResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Cuenta solo los días de lunes a viernes entre las dos fechas. Útil para estimar plazos laborales o vacaciones. No incluye festivos nacionales o locales.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Temperatura -->
+    <section id="temperatura" class="section">
+      <div class="calc-card">
+        <h2>Conversor de Temperatura</h2>
+        <p class="desc">Convierte entre grados Celsius y Fahrenheit.</p>
+        <form id="tempForm">
+          <div class="form-group"><label>Valor</label><input type="number" id="tempValor" step="0.1" required placeholder="25"></div>
+          <div class="form-group">
+            <label>De</label>
+            <select id="tempDesde">
+              <option value="c">Celsius (°C)</option>
+              <option value="f">Fahrenheit (°F)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Convertir</button>
+        </form>
+        <div id="tempResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Para pasar de Celsius a Fahrenheit: °F = (°C × 9/5) + 32. Para pasar de Fahrenheit a Celsius: °C = (°F − 32) × 5/9. Útil para viajes, recetas o cualquier conversión de temperatura.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <section id="countdown" class="section">
+      <div class="calc-card">
+        <h2>Días hasta una fecha</h2>
+        <p class="desc">Calcula cuántos días faltan para una fecha concreta.</p>
+        <form id="countdownForm">
+          <div class="form-group"><label>Fecha objetivo</label><input type="date" id="fechaObjetivo" required></div>
+          <button type="submit" class="btn">Calcular días</button>
+        </form>
+        <div id="countdownResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Se calcula la diferencia en días entre hoy y la fecha que elijas. Si la fecha ya pasó, indica cuántos días han transcurrido. Ideal para cuenta atrás de eventos, vacaciones o plazos.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Precio -->
+    <section id="precio" class="section">
+      <div class="calc-card">
+        <h2>Precio por unidad</h2>
+        <p class="desc">Compara el precio real por kilo, litro o unidad para saber qué oferta es mejor.</p>
+        <form id="precioForm">
+          <div class="form-group"><label>Precio total (€)</label><input type="number" id="precioTotal" step="0.01" required placeholder="3.50"></div>
+          <div class="form-group"><label>Cantidad</label><input type="number" id="cantidad" step="0.01" required placeholder="500"></div>
+          <div class="form-group">
+            <label>Unidad</label>
+            <select id="unidadPrecio">
+              <option value="g">gramos</option>
+              <option value="kg">kilogramos</option>
+              <option value="ml">mililitros</option>
+              <option value="l">litros</option>
+              <option value="u">unidades</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="precioResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Divide el precio total entre la cantidad y ajusta a la unidad base (por kg, por litro o por unidad). Muy útil para comparar productos en el supermercado y elegir la opción más económica.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Horas -->
+    <section id="horas" class="section">
+      <div class="calc-card">
+        <h2>Diferencia de horas</h2>
+        <p class="desc">Calcula las horas y minutos entre dos momentos del día.</p>
+        <form id="horasForm">
+          <div class="form-group"><label>Hora inicial</label><input type="time" id="hora1" required></div>
+          <div class="form-group"><label>Hora final</label><input type="time" id="hora2" required></div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="horasResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Calcula la diferencia en minutos entre las dos horas y la convierte a horas y minutos. Si la hora final es anterior a la inicial, asume que cruza la medianoche. Útil para jornadas laborales o tiempo entre eventos.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Combustible -->
+    <section id="combustible" class="section">
+      <div class="calc-card">
+        <h2>Consumo de combustible</h2>
+        <p class="desc">Calcula el consumo en litros por cada 100 km.</p>
+        <form id="combustibleForm">
+          <div class="form-group"><label>Litros consumidos</label><input type="number" id="litros" step="0.1" required placeholder="40"></div>
+          <div class="form-group"><label>Kilómetros recorridos</label><input type="number" id="km" step="1" required placeholder="500"></div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="combustibleResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Consumo (L/100 km) = (litros consumidos / kilómetros) × 100. Una medida estándar para comparar la eficiencia de los coches. Cuanto más bajo, menos combustible gasta.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Peso ideal -->
+    <section id="pesoideal" class="section">
+      <div class="calc-card">
+        <h2>Peso ideal</h2>
+        <p class="desc">Calcula el rango de peso saludable según tu altura (basado en IMC).</p>
+        <form id="pesoidealForm">
+          <div class="form-group"><label>Altura (cm)</label><input type="number" id="alturaIdeal" required placeholder="170"></div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="pesoidealResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Usa el rango de IMC saludable (18.5 a 24.9) de la OMS. Peso mínimo = 18.5 × altura(m)² y peso máximo = 24.9 × altura(m)². Es orientativo y no sustituye consejo médico.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Interés simple -->
+    <section id="interesimple" class="section">
+      <div class="calc-card">
+        <h2>Interés simple</h2>
+        <p class="desc">Calcula el interés sin capitalización (interés simple).</p>
+        <form id="interesimpleForm">
+          <div class="form-group"><label>Capital (€)</label><input type="number" id="capSimple" required placeholder="1000"></div>
+          <div class="form-group"><label>Tasa anual (%)</label><input type="number" id="tasaSimple" step="0.01" required placeholder="5"></div>
+          <div class="form-group"><label>Tiempo (años)</label><input type="number" id="tiempoSimple" step="0.1" required placeholder="2"></div>
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="interesimpleResult" class="result"></div>
+        <div class="explanation">
+          <h3>Cómo se calcula</h3>
+          <p>Interés simple = Capital × (tasa/100) × tiempo. El interés no se suma al capital para generar más interés (a diferencia del interés compuesto). Útil para préstamos o depósitos simples.</p>
+        </div>
+        <div class="ad-space">Espacio para anuncio</div>
+      </div>
+    </section>
+
+    <!-- Historial -->
+    <section id="historial" class="section">
+      <div class="calc-card">
+        <h2>Historial de cálculos</h2>
+        <p class="desc">Tus últimos cálculos se guardan automáticamente en este dispositivo.</p>
+        <div id="historyList"></div>
+        <button id="clearHistory" class="btn btn-danger">Borrar historial</button>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+      <div class="calc-card">
+        <h2>Sobre Calculadoras Útiles</h2>
+        <p>Calculadoras Útiles es un proyecto dedicado a ofrecer herramientas de cálculo gratuitas, precisas y fáciles de usar. Todas las operaciones se realizan directamente en el navegador, garantizando que tus datos nunca salgan de tu dispositivo.</p>
+        <h3 style="margin-top:1.5rem;">Nuestro compromiso</h3>
+        <ul style="margin-left:1.2rem; margin-top:0.5rem; color:var(--text-muted);">
+          <li>100% gratuito</li>
+          <li>Privacidad total (sin envío de datos)</li>
+          <li>Diseño profesional y responsive</li>
+          <li>Resultados basados en fórmulas estándar</li>
+        </ul>
+        <p style="margin-top:1rem;">Próximamente añadiremos más calculadoras y recursos útiles.</p>
+      </div>
+    </section>
+
+    <!-- Privacidad -->
+    <section id="privacidad" class="section">
+      <div class="calc-card">
+        <h2>Política de Privacidad</h2>
+        <p>Calculadoras Útiles respeta tu privacidad. No recopilamos ni almacenamos datos personales; todos los cálculos se realizan localmente en tu navegador y no se envían a ningún servidor.</p>
+        <p style="margin-top:1rem;">El sitio puede utilizar cookies técnicas y de terceros (como Google AdSense) para mostrar anuncios relevantes y analizar el tráfico de forma anónima. Puedes gestionar las cookies a través de la configuración de tu navegador.</p>
+        <p style="margin-top:1rem;">Los enlaces externos a sitios de terceros tienen sus propias políticas de privacidad.</p>
+        <p style="margin-top:1rem; color:var(--text-muted);">Última actualización: octubre 2026.</p>
+      </div>
+    </section>
+
+    <!-- Sugerencias -->
+    <section id="sugerencias" class="section">
+      <div class="calc-card">
+        <h2>Deja tu sugerencia</h2>
+        <p class="desc">¿Qué calculadora te gustaría ver? ¿Alguna mejora o idea? Escríbela aquí.</p>
+        <form name="sugerencias" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="sugerencias" />
+          <p style="display:none;"><label>No rellenar: <input name="bot-field" /></label></p>
+          <div class="form-group">
+            <label>Nombre (opcional)</label>
+            <input type="text" name="nombre" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>Email (opcional)</label>
+            <input type="email" name="email" placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label>Sugerencia *</label>
+            <textarea name="sugerencia" required rows="5" placeholder="Ej: Me gustaría una calculadora de días entre fechas..."></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar sugerencia</button>
+        </form>
+        <div id="sugerenciaOk" class="result" style="display:none;">
+          <strong>¡Gracias!</strong> Tu sugerencia se ha enviado correctamente.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Calculadoras Útiles · 100% gratis y privado · 
+    <button onclick="showSection('sobre')" class="footer-link">Sobre</button> · 
+    <button onclick="showSection('privacidad')" class="footer-link">Privacidad</button> · 
+    <button onclick="showSection('sugerencias')" class="footer-link">Sugerencias</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
