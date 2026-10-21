@@ -50,6 +50,30 @@ const titles = {
   privacidad: 'Política de Privacidad',
   sugerencias: 'Sugerencias'
 };
+const descriptions = {
+  inicio: 'Calculadoras gratuitas y 100% privadas en español: IMC, IVA, préstamos, interés compuesto, porcentajes y más. Sin registro.',
+  imc: 'Calcula tu Índice de Masa Corporal (IMC) y conoce tu categoría según la OMS. Gratis y privado.',
+  porcentaje: 'Calculadora de porcentajes: descuentos, aumentos y proporciones de forma rápida.',
+  edad: 'Calcula tu edad exacta en años, meses y días a partir de tu fecha de nacimiento.',
+  prestamo: 'Calcula la cuota mensual de un préstamo o hipoteca, el total a pagar y los intereses.',
+  iva: 'Calculadora de IVA España. Añade o quita el 21%, 10% o 4% de cualquier importe.',
+  interes: 'Calcula el valor futuro de una inversión con interés compuesto y aportaciones periódicas.',
+  fechas: 'Calcula los días exactos entre dos fechas.',
+  propina: 'Calcula la propina y divide la cuenta entre varias personas.',
+  unidades: 'Conversor de unidades de peso, volumen y longitud.',
+  nomina: 'Estimación aproximada de salario neto a partir del bruto anual.',
+  laborables: 'Calcula los días laborables (lunes a viernes) entre dos fechas.',
+  temperatura: 'Convierte temperaturas entre Celsius y Fahrenheit.',
+  countdown: 'Cuenta atrás: calcula cuántos días faltan hasta una fecha.',
+  precio: 'Calcula el precio por kilo, litro o unidad para comparar ofertas.',
+  horas: 'Calcula la diferencia de horas y minutos entre dos momentos.',
+  combustible: 'Calcula el consumo de combustible en litros cada 100 km.',
+  pesoideal: 'Calcula tu rango de peso ideal saludable según tu altura.',
+  interesimple: 'Calcula el interés simple de un capital.',
+  tdee: 'Calcula tu gasto calórico diario estimado (TDEE).',
+  regla3: 'Resuelve reglas de tres directas de forma rápida.',
+  imcinverso: 'Calcula el peso necesario para alcanzar un IMC objetivo.'
+};
 function showSection(id) {
   sections.forEach(s => s.classList.remove('active'));
   navBtns.forEach(b => b.classList.remove('active'));
@@ -58,6 +82,13 @@ function showSection(id) {
   const btn = document.querySelector(`nav button[data-section="${id}"]`);
   if (btn) btn.classList.add('active');
   document.title = titles[id] || 'Calculadoras Útiles';
+
+  // Actualizar meta description
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && descriptions[id]) {
+    metaDesc.setAttribute('content', descriptions[id]);
+  }
+
   if (location.hash !== '#' + id) location.hash = id;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
