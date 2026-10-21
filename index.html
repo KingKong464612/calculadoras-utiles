@@ -27,6 +27,46 @@
     "inLanguage": "es"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Las calculadoras son gratuitas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, todas las calculadoras de Calculadoras Útiles son 100% gratuitas y no requieren registro."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se guardan mis datos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Todos los cálculos se realizan directamente en tu navegador. No enviamos ni almacenamos ningún dato personal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo calculo el IVA en España?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usa la calculadora de IVA. Puedes añadir o quitar el 21%, 10% o 4% de cualquier importe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se calcula el interés compuesto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Introduce el capital inicial, la tasa de interés, los años y las aportaciones periódicas en la calculadora de interés compuesto."
+        }
+      }
+    ]
+  }
+  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3041644855344581" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -73,6 +113,30 @@
         <div class="tool-card" data-go="imcinverso" data-keywords="imc inverso peso objetivo"><h3>IMC inverso</h3><p>Peso necesario para un IMC</p></div>
       </div>
       <div id="noResults" class="no-results">No se encontraron calculadoras</div>
+
+      <div class="faq" style="margin-top:3rem; max-width:700px;">
+        <h2 style="margin-bottom:1rem;">Preguntas frecuentes</h2>
+        <div class="faq-item" style="margin-bottom:1.2rem;">
+          <h3 style="font-size:1.05rem; margin-bottom:0.3rem;">¿Las calculadoras son gratuitas?</h3>
+          <p style="color:var(--text-muted);">Sí. Todas las herramientas son 100% gratuitas y no requieren registro ni cuenta.</p>
+        </div>
+        <div class="faq-item" style="margin-bottom:1.2rem;">
+          <h3 style="font-size:1.05rem; margin-bottom:0.3rem;">¿Se guardan mis datos?</h3>
+          <p style="color:var(--text-muted);">No. Todos los cálculos se realizan en tu navegador. No enviamos ni almacenamos información personal.</p>
+        </div>
+        <div class="faq-item" style="margin-bottom:1.2rem;">
+          <h3 style="font-size:1.05rem; margin-bottom:0.3rem;">¿Cómo calculo el IVA en España?</h3>
+          <p style="color:var(--text-muted);">Usa la <a href="#iva" style="color:var(--accent);">calculadora de IVA</a>. Puedes añadir o quitar el 21%, 10% o 4%.</p>
+        </div>
+        <div class="faq-item" style="margin-bottom:1.2rem;">
+          <h3 style="font-size:1.05rem; margin-bottom:0.3rem;">¿Cómo funciona el interés compuesto?</h3>
+          <p style="color:var(--text-muted);">Introduce capital, tasa, años y aportaciones en la <a href="#interes" style="color:var(--accent);">calculadora de interés compuesto</a>.</p>
+        </div>
+        <div class="faq-item">
+          <h3 style="font-size:1.05rem; margin-bottom:0.3rem;">¿Puedo usar las calculadoras en el móvil?</h3>
+          <p style="color:var(--text-muted);">Sí. La página está optimizada para móviles y tablets.</p>
+        </div>
+      </div>
     </section>
     <section id="imc" class="section"><div class="calc-card"><h2>Calculadora de IMC</h2><p class="desc">El Índice de Masa Corporal (IMC) indica si tu peso está en un rango saludable según la Organización Mundial de la Salud. Introduce tu peso y altura para conocer tu categoría.</p><form id="imcForm"><div class="form-group"><label>Peso (kg)</label><input type="number" id="peso" step="0.1" required></div><div class="form-group"><label>Altura (cm)</label><input type="number" id="altura" required></div><button type="submit" class="btn">Calcular</button></form><div id="imcResult" class="result"></div><p class="related" style="margin-top:1.5rem; font-size:0.9rem;">Relacionadas: <a href="#pesoideal" style="color:var(--accent);">Peso ideal</a> · <a href="#imcinverso" style="color:var(--accent);">IMC inverso</a> · <a href="#tdee" style="color:var(--accent);">TDEE / Calorías</a></p></div></section>
     <section id="porcentaje" class="section"><div class="calc-card"><h2>Calculadora de Porcentaje</h2><p class="desc">Calcula porcentajes de forma rápida: el X% de una cantidad, aumentos, descuentos o qué porcentaje representa un número de otro.</p><form id="porcForm"><div class="form-group"><label>Tipo</label><select id="tipo"><option value="de">X% de Y</option><option value="aumento">Aumento</option><option value="descuento">Descuento</option><option value="es">Y es % de X</option></select></div><div class="form-group"><label>Valor 1</label><input type="number" id="v1" step="0.01" required></div><div class="form-group"><label>Valor 2</label><input type="number" id="v2" step="0.01" required></div><button type="submit" class="btn">Calcular</button></form><div id="porcResult" class="result"></div><p class="related" style="margin-top:1.5rem; font-size:0.9rem;">Relacionadas: <a href="#regla3" style="color:var(--accent);">Regla de tres</a> · <a href="#iva" style="color:var(--accent);">IVA</a></p></div></section>
