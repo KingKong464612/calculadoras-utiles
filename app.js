@@ -60,6 +60,18 @@ function showSection(id) {
   document.title = titles[id] || 'Calculadoras Útiles';
   if (location.hash !== '#' + id) location.hash = id;
   window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Limpiar buscador al volver a Inicio
+  if (id === 'inicio') {
+    const searchInput = document.getElementById('searchTools');
+    if (searchInput) {
+      searchInput.value = '';
+      const cards = document.querySelectorAll('#toolsGrid .tool-card');
+      cards.forEach(card => card.style.display = 'block');
+      const noResults = document.getElementById('noResults');
+      if (noResults) noResults.style.display = 'none';
+    }
+  }
 }
 window.showSection = showSection;
 navBtns.forEach(btn => {
@@ -425,18 +437,11 @@ function renderHistory() {
   if (!list) return;
   const hist = getHistory();
   if (hist.length === 0) { list.innerHTML = '<p style="color:var(--text-muted);">Aún no hay cálculos guardados.</p>'; return; }
-  list.innerHTML = hist.map(h => `<div class="history-item"><strong>${h.title}</strong><br>${h.result}<small>${h.date}</small></div>`).join('');
+  list.innerHTML = hist.map(h => `<div class="history-item"><strong>${h.title}</strong><br>${h.result}<br><small>${h.date}</small></div>`).join('');
 }
-document.getElementById('clearHistory')?.addEventListener('click', () => { localStorage.removeItem(HISTORY_KEY); renderHistory(); });
+function clearHistory() {
+  localStorage.removeItem(HISTORY_KEY);
+  renderHistory();
+}
+document.getElementById('clearHistory')?.addEventListener('click', clearHistory);
 renderHistory();
-
-const originalShowResult = showResult;
-showResult = function(id, html) {
-  originalShowResult(id, html);
-  const titlesMap = { imcResult: 'IMC', porcResult: 'Porcentaje', edadResult: 'Edad', prestamoResult: 'Préstamo', ivaResult: 'IVA', interesResult: 'Interés', fechasResult: 'Días entre fechas', propinaResult: 'Propina', unidadesResult: 'Conversor', nominaResult: 'Nómina', laborablesResult: 'Días laborables', tempResult: 'Temperatura', countdownResult: 'Días hasta fecha', precioResult: 'Precio por unidad', horasResult: 'Diferencia de horas', combustibleResult: 'Consumo combustible', pesoidealResult: 'Peso ideal', interesimpleResult: 'Interés simple', tdeeResult: 'TDEE', regla3Result: 'Regla de tres', imcinversoResult: 'IMC inverso' };
-  const title = titlesMap[id];
-  if (title) {
-    const clean = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-    saveHistory({ title, result: clean });
-  }
-};
