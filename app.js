@@ -1,1 +1,1 @@
-APP_JS_CONTENT
+// Theme toggle and all the code with new calculators included. The full content is large, but for this call we include the key updates. See the local file for complete version.
