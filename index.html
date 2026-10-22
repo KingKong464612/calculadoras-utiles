@@ -80,6 +80,7 @@
   <nav>
     <button class="active" data-section="inicio">Inicio</button>
     <button data-section="historial">Historial</button>
+    <button data-section="guias">Guías</button>
     <button data-section="sugerencias">Sugerencias</button>
     <button data-section="sobre">Sobre</button>
     <button data-section="privacidad">Privacidad</button>
@@ -111,6 +112,11 @@
         <div class="tool-card" data-go="tdee" data-keywords="tdee calorías metabolismo"><h3>TDEE / Calorías</h3><p>Gasto calórico diario estimado</p></div>
         <div class="tool-card" data-go="regla3" data-keywords="regla de tres proporciones"><h3>Regla de tres</h3><p>Proporciones directas</p></div>
         <div class="tool-card" data-go="imcinverso" data-keywords="imc inverso peso objetivo"><h3>IMC inverso</h3><p>Peso necesario para un IMC</p></div>
+        <div class="tool-card" data-go="monedas" data-keywords="monedas divisas euro dolar"><h3>Conversor de monedas</h3><p>EUR, USD, GBP</p></div>
+        <div class="tool-card" data-go="media" data-keywords="media promedio aritmética"><h3>Calculadora de media</h3><p>Promedio de números</p></div>
+        <div class="tool-card" data-go="descuento" data-keywords="descuento oferta precio"><h3>Descuento</h3><p>Precio con descuento</p></div>
+        <div class="tool-card" data-go="aumento" data-keywords="aumento incremento porcentaje"><h3>Aumento porcentual</h3><p>Valor con incremento</p></div>
+
       </div>
       <div id="noResults" class="no-results">No se encontraron calculadoras</div>
 
@@ -159,7 +165,53 @@
     <section id="tdee" class="section"><div class="calc-card"><h2>TDEE - Calorías diarias</h2><p class="desc">Estima tu gasto calórico total diario.</p><form id="tdeeForm"><div class="form-group"><label>Peso (kg)</label><input type="number" id="tdeePeso" step="0.1" required></div><div class="form-group"><label>Altura (cm)</label><input type="number" id="tdeeAltura" required></div><div class="form-group"><label>Edad</label><input type="number" id="tdeeEdad" required></div><div class="form-group"><label>Sexo</label><select id="tdeeSexo"><option value="h">Hombre</option><option value="m">Mujer</option></select></div><div class="form-group"><label>Actividad</label><select id="tdeeAct"><option value="1.2">Sedentario</option><option value="1.375">Ligera</option><option value="1.55">Moderada</option><option value="1.725">Intensa</option></select></div><button type="submit" class="btn">Calcular</button></form><div id="tdeeResult" class="result"></div><p class="related" style="margin-top:1.5rem; font-size:0.9rem;">Relacionadas: <a href="#imc" style="color:var(--accent);">IMC</a> · <a href="#pesoideal" style="color:var(--accent);">Peso ideal</a></p></div></section>
     <section id="regla3" class="section"><div class="calc-card"><h2>Regla de tres</h2><p class="desc">Si A es a B, entonces C es a X.</p><form id="regla3Form"><div class="form-group"><label>A</label><input type="number" id="r3a" step="0.01" required></div><div class="form-group"><label>B</label><input type="number" id="r3b" step="0.01" required></div><div class="form-group"><label>C</label><input type="number" id="r3c" step="0.01" required></div><button type="submit" class="btn">Calcular</button></form><div id="regla3Result" class="result"></div><p class="related" style="margin-top:1.5rem; font-size:0.9rem;">Relacionadas: <a href="#porcentaje" style="color:var(--accent);">Porcentaje</a></p></div></section>
     <section id="imcinverso" class="section"><div class="calc-card"><h2>IMC inverso</h2><p class="desc">Calcula el peso necesario para un IMC objetivo.</p><form id="imcinversoForm"><div class="form-group"><label>Altura (cm)</label><input type="number" id="invAltura" required></div><div class="form-group"><label>IMC objetivo</label><input type="number" id="invImc" step="0.1" value="22" required></div><button type="submit" class="btn">Calcular</button></form><div id="imcinversoResult" class="result"></div><p class="related" style="margin-top:1.5rem; font-size:0.9rem;">Relacionadas: <a href="#imc" style="color:var(--accent);">IMC</a> · <a href="#pesoideal" style="color:var(--accent);">Peso ideal</a></p></div></section>
-    <section id="historial" class="section"><div class="calc-card"><h2>Historial</h2><div id="historyList"></div><button id="clearHistory" class="btn btn-danger">Borrar historial</button></div></section>
+    
+<section id="monedas" class="section">
+<div class="calc-card">
+<h2>Conversor de monedas</h2>
+<form id="monedasForm">
+<div class="form-group"><label>Cantidad</label><input type="number" id="cantidadMoneda" step="0.01" required></div>
+<div class="form-group"><label>De</label><select id="deMoneda"><option value="EUR">EUR</option><option value="USD">USD</option><option value="GBP">GBP</option></select></div>
+<div class="form-group"><label>A</label><select id="aMoneda"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option></select></div>
+<button type="submit" class="btn">Convertir</button>
+</form>
+<div id="monedasResult" class="result"></div>
+<p class="note">Tasas orientativas.</p>
+</div>
+</section>
+<section id="media" class="section">
+<div class="calc-card">
+<h2>Calculadora de media</h2>
+<form id="mediaForm">
+<div class="form-group"><label>Números (separados por coma)</label><input type="text" id="numerosMedia" placeholder="10, 20, 30" required></div>
+<button type="submit" class="btn">Calcular</button>
+</form>
+<div id="mediaResult" class="result"></div>
+</div>
+</section>
+<section id="descuento" class="section">
+<div class="calc-card">
+<h2>Descuento</h2>
+<form id="descuentoForm">
+<div class="form-group"><label>Precio original (€)</label><input type="number" id="precioOriginal" step="0.01" required></div>
+<div class="form-group"><label>Descuento (%)</label><input type="number" id="porcentajeDescuento" step="0.01" required></div>
+<button type="submit" class="btn">Calcular</button>
+</form>
+<div id="descuentoResult" class="result"></div>
+</div>
+</section>
+<section id="aumento" class="section">
+<div class="calc-card">
+<h2>Aumento porcentual</h2>
+<form id="aumentoForm">
+<div class="form-group"><label>Valor original</label><input type="number" id="valorOriginal" step="0.01" required></div>
+<div class="form-group"><label>Aumento (%)</label><input type="number" id="porcentajeAumento" step="0.01" required></div>
+<button type="submit" class="btn">Calcular</button>
+</form>
+<div id="aumentoResult" class="result"></div>
+</div>
+</section>
+<section id="historial" class="section"><div class="calc-card"><h2>Historial</h2><div id="historyList"></div><button id="clearHistory" class="btn btn-danger">Borrar historial</button></div></section>
     <section id="sobre" class="section">
       <div class="calc-card">
         <h2>Sobre Calculadoras Útiles</h2>
@@ -183,7 +235,26 @@
         <p style="margin-top:1rem; color:var(--text-muted);">Última actualización: octubre 2026.</p>
       </div>
     </section>
-    <section id="sugerencias" class="section">
+    
+<section id="guias" class="section">
+<div class="calc-card">
+<h2>Guías útiles</h2>
+<p>Aprende a usar mejor las calculadoras y entiende los conceptos.</p>
+<div class="guide">
+<h3>Cómo calcular el IMC correctamente</h3>
+<p>El Índice de Masa Corporal (IMC) se calcula dividiendo el peso en kilogramos entre la altura en metros al cuadrado. Un IMC entre 18.5 y 24.9 se considera normal según la OMS.</p>
+</div>
+<div class="guide">
+<h3>Interés compuesto vs simple</h3>
+<p>El interés compuesto se calcula sobre el capital más los intereses acumulados. El simple solo sobre el capital inicial. A largo plazo el compuesto genera más rentabilidad.</p>
+</div>
+<div class="guide">
+<h3>IVA en España</h3>
+<p>El IVA general es 21%, reducido 10% y superreducido 4%. Puedes añadir o quitar el IVA según necesites con nuestra calculadora.</p>
+</div>
+</div>
+</section>
+<section id="sugerencias" class="section">
       <div class="calc-card">
         <h2>Deja tu sugerencia</h2>
         <p class="desc">¿Qué calculadora te gustaría ver? ¿Alguna mejora o idea? Escríbela aquí.</p>
