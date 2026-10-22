@@ -2,12 +2,49 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculadoras Útiles</title>
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
-<header><h1>Calculadoras Útiles</h1><p>Restaurando página completa...</p></header>
-<main><section id="inicio" class="section active"><h2>Elige una herramienta</h2><p>Página en restauración. Recarga en 1 minuto.</p></section></main>
+<header>
+<button class="theme-toggle" id="themeBtn">🌙</button>
+<h1>Calculadoras Útiles</h1>
+<p>Herramientas interactivas, rápidas y 100% privadas</p>
+</header>
+<nav>
+<button class="active" data-section="inicio">Inicio</button>
+<button data-section="historial">Historial</button>
+<button data-section="sugerencias">Sugerencias</button>
+<button data-section="sobre">Sobre</button>
+<button data-section="privacidad">Privacidad</button>
+</nav>
+<main>
+<section id="inicio" class="section active">
+<h2>Elige una herramienta</h2>
+<div class="search-box"><input type="text" id="searchTools" placeholder="Buscar calculadora..."></div>
+<div class="grid" id="toolsGrid">
+<div class="tool-card" data-go="imc"><h3>Calculadora de IMC</h3><p>Peso y altura</p></div>
+<div class="tool-card" data-go="porcentaje"><h3>Porcentaje</h3><p>Descuentos y aumentos</p></div>
+<div class="tool-card" data-go="edad"><h3>Edad exacta</h3><p>Años, meses y días</p></div>
+<div class="tool-card" data-go="prestamo"><h3>Préstamo</h3><p>Cuota mensual</p></div>
+<div class="tool-card" data-go="iva"><h3>IVA España</h3><p>21%, 10%, 4%</p></div>
+<div class="tool-card" data-go="interes"><h3>Interés compuesto</h3><p>Valor futuro</p></div>
+</div>
+</section>
+<section id="imc" class="section"><div class="calc-card"><h2>IMC</h2><form id="imcForm"><div class="form-group"><label>Peso (kg)</label><input type="number" id="peso" step="0.1" required></div><div class="form-group"><label>Altura (cm)</label><input type="number" id="altura" required></div><button type="submit" class="btn">Calcular</button></form><div id="imcResult" class="result"></div></div></section>
+<section id="porcentaje" class="section"><div class="calc-card"><h2>Porcentaje</h2><form id="porcForm"><div class="form-group"><label>Tipo</label><select id="tipo"><option value="de">X% de Y</option><option value="descuento">Descuento</option></select></div><div class="form-group"><label>Valor 1</label><input type="number" id="v1" required></div><div class="form-group"><label>Valor 2</label><input type="number" id="v2" required></div><button type="submit" class="btn">Calcular</button></form><div id="porcResult" class="result"></div></div></section>
+<section id="edad" class="section"><div class="calc-card"><h2>Edad</h2><form id="edadForm"><div class="form-group"><label>Fecha nacimiento</label><input type="date" id="fecha" required></div><button type="submit" class="btn">Calcular</button></form><div id="edadResult" class="result"></div></div></section>
+<section id="prestamo" class="section"><div class="calc-card"><h2>Préstamo</h2><form id="prestamoForm"><div class="form-group"><label>Capital (€)</label><input type="number" id="capital" required></div><div class="form-group"><label>Tasa anual (%)</label><input type="number" id="tasa" step="0.01" required></div><div class="form-group"><label>Años</label><input type="number" id="plazo" required></div><button type="submit" class="btn">Calcular</button></form><div id="prestamoResult" class="result"></div></div></section>
+<section id="iva" class="section"><div class="calc-card"><h2>IVA</h2><form id="ivaForm"><div class="form-group"><label>Importe (€)</label><input type="number" id="importe" step="0.01" required></div><div class="form-group"><label>Tipo</label><select id="tipoIva"><option value="21">21%</option><option value="10">10%</option><option value="4">4%</option></select></div><div class="form-group"><label>Acción</label><select id="modo"><option value="mas">Añadir</option><option value="menos">Quitar</option></select></div><button type="submit" class="btn">Calcular</button></form><div id="ivaResult" class="result"></div></div></section>
+<section id="interes" class="section"><div class="calc-card"><h2>Interés compuesto</h2><form id="interesForm"><div class="form-group"><label>Capital inicial (€)</label><input type="number" id="principal" required></div><div class="form-group"><label>Tasa anual (%)</label><input type="number" id="tasaInt" step="0.01" required></div><div class="form-group"><label>Años</label><input type="number" id="anos" required></div><button type="submit" class="btn">Calcular</button></form><div id="interesResult" class="result"></div></div></section>
+<section id="historial" class="section"><div class="calc-card"><h2>Historial</h2><div id="historyList"></div></div></section>
+<section id="sugerencias" class="section"><div class="calc-card"><h2>Sugerencias</h2><p>Envía tus ideas.</p></div></section>
+<section id="sobre" class="section"><div class="calc-card"><h2>Sobre</h2><p>Calculadoras gratuitas y privadas.</p></div></section>
+<section id="privacidad" class="section"><div class="calc-card"><h2>Privacidad</h2><p>No guardamos datos.</p></div></section>
+</main>
+<footer>Calculadoras Útiles</footer>
 <script src="app.js"></script>
 </body>
 </html>
