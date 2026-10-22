@@ -476,3 +476,45 @@ function clearHistory() {
 }
 document.getElementById('clearHistory')?.addEventListener('click', clearHistory);
 renderHistory();
+
+// Monedas (tasas orientativas)
+const monedasForm = document.getElementById('monedasForm');
+if (monedasForm) monedasForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const cant = parseFloat(document.getElementById('cantidadMoneda').value);
+  const de = document.getElementById('deMoneda').value;
+  const a = document.getElementById('aMoneda').value;
+  const rates = {EUR:1, USD:1.08, GBP:0.85};
+  const res = cant * (rates[a] / rates[de]);
+  document.getElementById('monedasResult').innerHTML = `<strong>${cant} ${de} = ${res.toFixed(2)} ${a}</strong>`;
+});
+
+// Media
+const mediaForm = document.getElementById('mediaForm');
+if (mediaForm) mediaForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const nums = document.getElementById('numerosMedia').value.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
+  if (nums.length === 0) return;
+  const avg = nums.reduce((a,b)=>a+b,0) / nums.length;
+  document.getElementById('mediaResult').innerHTML = `<strong>Media: ${avg.toFixed(2)}</strong> (${nums.length} números)`;
+});
+
+// Descuento
+const descuentoForm = document.getElementById('descuentoForm');
+if (descuentoForm) descuentoForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const p = parseFloat(document.getElementById('precioOriginal').value);
+  const d = parseFloat(document.getElementById('porcentajeDescuento').value);
+  const final = p * (1 - d/100);
+  document.getElementById('descuentoResult').innerHTML = `<strong>Precio final: ${final.toFixed(2)} €</strong><br>Ahorras: ${(p-final).toFixed(2)} €`;
+});
+
+// Aumento
+const aumentoForm = document.getElementById('aumentoForm');
+if (aumentoForm) aumentoForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = parseFloat(document.getElementById('valorOriginal').value);
+  const a = parseFloat(document.getElementById('porcentajeAumento').value);
+  const final = v * (1 + a/100);
+  document.getElementById('aumentoResult').innerHTML = `<strong>Valor final: ${final.toFixed(2)}</strong>`;
+});
